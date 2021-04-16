@@ -28,6 +28,14 @@ TEST(SubTest, SubString_Ten_minus_Five) {
     EXPECT_EQ(test->stringify(), result);
 }
 
+TEST(SubTest, SubString_Five_minus_Ten) {
+    Base* op1 = new mockOpFive();
+    Base* op2 = new mockOpTen();
+    Sub* test = new Sub(op1, op2);
+    std::string result = "(5-10)";
+    EXPECT_EQ(test->stringify(), result);
+}
+
 
 #endif //__SUB_TEST_HPP__
 
