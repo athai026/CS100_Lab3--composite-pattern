@@ -16,7 +16,7 @@ class Rand : public Base {
         }
         virtual std:: string stringify() {
             std::ostringstream ss;
-            ss << std::setprecision(8) << std::noshowpioint << random;
+            ss << std::setprecision(8) << std::noshowpoint << random;
             return ss.str();
         }
 
