@@ -15,5 +15,10 @@ TEST(OpTest, OpEvaluateZero) {
     EXPECT_EQ(test->evaluate(), 0);
 }
 
+TEST(OpTest, OpEvaluateNeg) {
+    Op* test = new Op(-22); 
+    EXPECT_EQ(test->evaluate(), -22);
+}
+
 
 #endif //__OP_TEST_HPP__
