@@ -20,5 +20,22 @@ TEST(OpTest, OpEvaluateNeg) {
     EXPECT_EQ(test->evaluate(), -22);
 }
 
+TEST(OpTest, OpStringEight) {
+    Op* test = new Op(8);
+    std::string eight = "8";
+    EXPECT_EQ(test->stringify(), eight);
+}
+
+TEST(OpTest, OpStringZero) {
+    Op* test = new Op(0);
+    std::string zero = "0";
+    EXPECT_EQ(test->stringify(), zero);
+}
+
+TEST(OpTest, OpStringNeg) {
+    Op* test = new Op(-54);
+    std::string neg_fifty_four = "-54";
+    EXPECT_EQ(test->stringify(), neg_fifty_four);
+}
 
 #endif //__OP_TEST_HPP__
