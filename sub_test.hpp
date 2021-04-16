@@ -36,6 +36,21 @@ TEST(SubTest, SubString_Five_minus_Ten) {
     EXPECT_EQ(test->stringify(), result);
 }
 
+TEST(SubTest, SubEvaluate_Add_minus_Five) {
+    Base* op1 = new mockAdd();
+    Base* op2 = new mockOpFive();
+    Sub* test = new Sub(op1, op2);
+    EXPECT_EQ(test->evaluate(), 26);
+}
+
+TEST(SubTest, SubString_Add_minus_Five) {
+    Base* op1 = new mockAdd();
+    Base* op2 = new mockOpFive();
+    Sub* test = new Sub(op1, op2);
+    std::string result = "((13+18)-5)";
+    EXPECT_EQ(test->stringify(), result);
+}
+
 
 #endif //__SUB_TEST_HPP__
 
