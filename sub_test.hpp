@@ -13,5 +13,13 @@ TEST(SubTest, SubEval_Ten_minus_Five) {
     EXPECT_EQ(test->evaluate(), 5);
 }
 
+TEST(SubTest, SubEval_Five_minus_Ten) {
+    Base* op1 = new mockOpFive();
+    Base* op2 = new mockOpTen();
+    Sub* test = new Sub(op1, op2);
+    EXPECT_EQ(test->evaluate(), -5);
+}
+
+
 #endif //__SUB_TEST_HPP__
 
