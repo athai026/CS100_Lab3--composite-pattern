@@ -15,5 +15,10 @@ TEST(RandTest, RandEvaluateLT100) {
     EXPECT_LT(test->evaluate(), 100);
 }
 
+TEST(RandTest, RandStringifyNE) {
+    Rand* test = new Rand();
+    std::string temp = "101";
+    EXPECT_NE(test->stringify(), temp);
+}
 
 #endif //__RAND_TEST_HPP__
