@@ -3,6 +3,7 @@
 
 #include "mockOpTen.hpp"
 #include "mockOpFive.hpp"
+#include "mockAdd.hpp"
 
 #endif //__MOCK_HPP__
 
