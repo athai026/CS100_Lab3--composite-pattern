@@ -12,7 +12,7 @@ class Sub : public Base {
             r_string = right->stringify();
         }
         virtual double evaluate() {
-            difference = l_value = r_value;
+            difference = l_value - r_value;
             return difference;
         }
         virtual std::string stringify() {
