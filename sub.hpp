@@ -19,7 +19,7 @@ class Sub : public Base {
             return ("(" + l_string + "-" + r_string + ")");
         }
 
-    public: 
+    private: 
         double l_value, r_value, difference;
         std::string l_string, r_string;
         Base* left;
