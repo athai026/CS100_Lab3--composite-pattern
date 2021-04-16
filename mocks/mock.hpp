@@ -4,6 +4,9 @@
 #include "mockOpTen.hpp"
 #include "mockOpFive.hpp"
 #include "mockAdd.hpp"
+#include "mockMult.hpp"
+#include "mockPow.hpp"
+#include "mockDiv.hpp"
 
 #endif //__MOCK_HPP__
 
