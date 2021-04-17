@@ -72,5 +72,20 @@ TEST(DivTest, DivEval_Five_div_Nine) {
     EXPECT_NEAR(test->evaluate(), 0.555556, 0.000001);
 }
 
+TEST(DivTest, DivEval_Add_div_Pow) {
+    Base* op1 = new mockAdd();
+    Base* op2 = new mockPow();
+    Div* test = new Div(op1, op2);
+    EXPECT_NEAR(test->evaluate(), 0.382716, 0.000001);
+}
+
+TEST(DivTest, DivString_Add_div_Pow) {
+    Base* op1 = new mockAdd();
+    Base* op2 = new mockPow();
+    Div* test = new Div(op1, op2);
+    std::string result = "((13+18)/(3**4))";
+    EXPECT_EQ(test->stringify(), result);
+}
+
 #endif //__DIV_TEST_HPP__
 
