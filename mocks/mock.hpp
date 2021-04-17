@@ -2,7 +2,16 @@
 #define __MOCK_HPP__
 
 #include "mockOpTen.hpp"
+#include "mockOpNine.hpp"
+#include "mockOpEight.hpp"
+#include "mockOpSeven.hpp"
+#include "mockOpSix.hpp"
 #include "mockOpFive.hpp"
+#include "mockOpFour.hpp"
+#include "mockOpThree.hpp"
+#include "mockOpTwo.hpp"
+#include "mockOpOne.hpp"
+#include "mockOpZero.hpp"
 #include "mockAdd.hpp"
 #include "mockMult.hpp"
 #include "mockPow.hpp"
