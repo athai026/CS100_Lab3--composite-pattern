@@ -21,5 +21,20 @@ TEST(DivTest, DivString_Ten_div_Five) {
     EXPECT_EQ(test->stringify(), result);
 }
 
+TEST(DivTest, DivEval_Five_div_Ten) {
+    Base* op1 = new mockOpFive();
+    Base* op2 = new mockOpTen();
+    Div* test = new Div(op1, op2);
+    EXPECT_EQ(test->evaluate(), 0.5);
+}
+
+TEST(DivTest, DivString_Five_div_Ten) {
+    Base* op1 = new mockOpFive();
+    Base* op2 = new mockOpTen();
+    Div* test = new Div(op1, op2);
+    std::string result = "(5/10)";
+    EXPECT_EQ(test->stringify(), result);
+}
+
 #endif //__DIV_TEST_HPP__
 
