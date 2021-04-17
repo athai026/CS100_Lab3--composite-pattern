@@ -94,12 +94,19 @@ TEST(DivTest, DivEval_Mult_div_Nine) {
     EXPECT_NEAR(test->evaluate(), 4.666667, 0.000001);
 }
 
-TEST(DivTest, DivEqual_Mult_div_Nine) {
+TEST(DivTest, DivString_Mult_div_Nine) {
     Base* op1 = new mockMult();
     Base* op2 = new mockOpNine();
     Div* test = new Div(op1, op2);
     std::string result = "((6*7)/9)";
     EXPECT_EQ(test->stringify(), result);
+} 
+
+TEST(DivTest, DivEval_div_Zero) {
+    Base* op1 = new mockOpOne();
+    Base* op2 = new mockOpZero();
+    Div* test = new Div(op1, op2);
+    EXPECT_THROW(test->evaluate(), const char*);
 } 
 
 #endif //__DIV_TEST_HPP__
