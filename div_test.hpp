@@ -10,7 +10,7 @@ TEST(DivTest, DivEval_Ten_div_Five) {
     Base* op1 = new mockOpTen();
     Base* op2 = new mockOpFive();
     Div* test = new Div(op1, op2);
-    EXPECT_EQ(test->evaluate(), 2);
+    EXPECT_DOUBLE_EQ(test->evaluate(), 2.0);
 }
 
 TEST(DivTest, DivString_Ten_div_Five) {
@@ -33,6 +33,21 @@ TEST(DivTest, DivString_Five_div_Ten) {
     Base* op2 = new mockOpTen();
     Div* test = new Div(op1, op2);
     std::string result = "(5/10)";
+    EXPECT_EQ(test->stringify(), result);
+}
+
+TEST(DivTest, DivEval_One_div_Three) {
+    Base* op1 = new mockOpOne();
+    Base* op2 = new mockOpThree();
+    Div* test = new Div(op1, op2);
+    EXPECT_EQ(test->evaluate(), 0.333);
+}
+
+TEST(DivTest, DivString_One_div_Three) {
+    Base* op1 = new mockOpOne();
+    Base* op2 = new mockOpThree();
+    Div* test = new Div(op1, op2);
+    std::string result = "(1/3)";
     EXPECT_EQ(test->stringify(), result);
 }
 
