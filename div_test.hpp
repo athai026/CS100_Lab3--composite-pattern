@@ -25,7 +25,7 @@ TEST(DivTest, DivEval_Five_div_Ten) {
     Base* op1 = new mockOpFive();
     Base* op2 = new mockOpTen();
     Div* test = new Div(op1, op2);
-    EXPECT_EQ(test->evaluate(), 0.5);
+    EXPECT_NEAR(test->evaluate(), 0.5, 0.000001);
 }
 
 TEST(DivTest, DivString_Five_div_Ten) {
@@ -40,7 +40,7 @@ TEST(DivTest, DivEval_One_div_Three) {
     Base* op1 = new mockOpOne();
     Base* op2 = new mockOpThree();
     Div* test = new Div(op1, op2);
-    EXPECT_EQ(test->evaluate(), 0.333);
+    EXPECT_NEAR(test->evaluate(), 0.333333, 0.000001);
 }
 
 TEST(DivTest, DivString_One_div_Three) {
@@ -49,6 +49,27 @@ TEST(DivTest, DivString_One_div_Three) {
     Div* test = new Div(op1, op2);
     std::string result = "(1/3)";
     EXPECT_EQ(test->stringify(), result);
+}
+
+TEST(DivTest, DivEval_Two_div_Seven) {
+    Base* op1 = new mockOpTwo();
+    Base* op2 = new mockOpSeven();
+    Div* test = new Div(op1, op2);
+    EXPECT_NEAR(test->evaluate(), 0.285714, 0.000001);
+}
+
+TEST(DivTest, DivEval_Three_div_Eight) {
+    Base* op1 = new mockOpThree();
+    Base* op2 = new mockOpEight();
+    Div* test = new Div(op1, op2);
+    EXPECT_NEAR(test->evaluate(), 0.375, 0.000001);
+}
+
+TEST(DivTest, DivEval_Five_div_Nine) {
+    Base* op1 = new mockOpFive();
+    Base* op2 = new mockOpNine();
+    Div* test = new Div(op1, op2);
+    EXPECT_NEAR(test->evaluate(), 0.555556, 0.000001);
 }
 
 #endif //__DIV_TEST_HPP__
