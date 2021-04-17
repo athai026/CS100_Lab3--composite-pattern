@@ -109,5 +109,19 @@ TEST(DivTest, DivEval_div_Zero) {
     EXPECT_THROW(test->evaluate(), const char*);
 } 
 
+TEST(DivTest, DivEval_NegFour_div_Seven) {
+    Base* op1 = new mockOpNegFour();   
+    Base* op2 = new mockOpSeven();
+    Div* test = new Div(op1, op2);
+    EXPECT_NEAR(test->evaluate(), -0.571428, 0.000001);
+}
+
+TEST(DivTest, DivEval_NegSeven_div_NegFour) {
+    Base* op1 = new mockOpNegSeven();   
+    Base* op2 = new mockOpNegFour();
+    Div* test = new Div(op1, op2);
+    EXPECT_EQ(test->evaluate(), 1.75);
+}
+
 #endif //__DIV_TEST_HPP__
 

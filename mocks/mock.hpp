@@ -12,6 +12,8 @@
 #include "mockOpTwo.hpp"
 #include "mockOpOne.hpp"
 #include "mockOpZero.hpp"
+#include "mockOpNegFour.hpp"
+#include "mockOpNegSeven.hpp"
 #include "mockAdd.hpp"
 #include "mockMult.hpp"
 #include "mockPow.hpp"
