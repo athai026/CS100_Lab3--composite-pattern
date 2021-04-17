@@ -3,6 +3,8 @@
 
 #include "mockOpTen.hpp"
 #include "mockOpFive.hpp"
+#include "mockOpNegSeven.hpp"
+#include "mockOpNegFour.hpp"
 #include "mockAdd.hpp"
 #include "mockMult.hpp"
 #include "mockPow.hpp"

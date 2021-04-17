@@ -81,7 +81,27 @@ TEST(SubTest, SubString_Mult_minus_Div) {
     EXPECT_EQ(test->stringify(), result);
 }
 
+TEST(SubTest, SubEval_NegSeven_minus_NegFour) {
+    Base* op1 = new mockOpNegSeven();   
+    Base* op2 = new mockOpNegFour();
+    Sub* test = new Sub(op1, op2);
+    EXPECT_EQ(test->evaluate(), -3);
+}
 
+TEST(SubTest, SubString_NegSeven_minus_NegFour) {
+    Base* op1 = new mockOpNegSeven();
+    Base* op2 = new mockOpNegFour();
+    Sub* test = new Sub(op1, op2);
+    std::string result = "(-7--4)";
+    EXPECT_EQ(test->stringify(), result);
+}
+
+TEST(SubTest, SubEval_NegFour_minus_NegSeven) {
+    Base* op1 = new mockOpNegFour();
+    Base* op2 = new mockOpNegSeven();
+    Sub* test = new Sub(op1, op2);
+    EXPECT_EQ(test->evaluate(), 3);
+}
 
 #endif //__SUB_TEST_HPP__
 
