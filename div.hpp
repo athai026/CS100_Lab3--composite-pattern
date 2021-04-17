@@ -12,8 +12,13 @@ class Div : public Base {
             r_string = right->stringify();
         }
         virtual double evaluate() {
-            quotient = l_value / r_value;
-            return quotient;
+            if (r_value == 0) {
+                throw "Cannot divide by zero";
+            }
+            else {
+                quotient = l_value / r_value;
+                return quotient;
+            }
         }
         virtual std::string stringify() {
             return ("(" + l_string + "/" + r_string + ")");
