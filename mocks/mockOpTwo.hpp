@@ -5,7 +5,7 @@
 
 class mockOpTwo : public Base {
     public: 
-        mockOpTw0() {}
+        mockOpTwo() {}
         virtual double evaluate() {return 2;}
         virtual std::string stringify() {return "2";}
 };
