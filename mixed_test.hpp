@@ -78,5 +78,21 @@ TEST(MixedTest, test5) {
     EXPECT_EQ(pow->stringify(), result);
 }
 
+TEST(MixedTest, test6) {
+    Base* negOne = new Op(-1);
+    Base* eight = new Op(8);
+    Base* ten = new Op(10);
+    Base* eleven = new Op(11);
+    Base* twentyOne = new Op(21);
+    Base* add = new Add(ten, eleven);
+    Base* sub = new Sub(add, twentyOne);
+    Base* mult = new Mult(negOne, eight);
+    Base* pow = new Pow(sub, mult);
+    std::string result = "(((10+11)-21)**(-1*8))";
+
+    EXPECT_THROW(pow->evaluate(), const char*);
+    EXPECT_EQ(pow->stringify(), result);
+}
+
 #endif
 
