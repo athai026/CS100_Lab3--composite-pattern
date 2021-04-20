@@ -54,5 +54,18 @@ TEST(MixedTest, test3) {
     EXPECT_EQ(div->stringify(), result);
 }
 
+TEST(MixedTest, test4) {
+    Base* three = new Op(3);
+    Base* six = new Op(6);
+    Base* eight = new Op(8);
+    Base* sub1 = new Sub(three, six);
+    Base* sub2 = new Sub(eight, eight);
+    Base* div = new Div(sub1, sub2);
+    std::string result = "((3-6)/(8-8))";
+
+    EXPECT_THROW(div->evaluate(), const char*);
+    EXPECT_EQ(div->stringify(), result);
+}
+
 #endif
 
