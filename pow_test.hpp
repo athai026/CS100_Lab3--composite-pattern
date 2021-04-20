@@ -43,4 +43,12 @@ TEST(PowTest, PowEval_Mult_power_Zero) {
     EXPECT_EQ(test->evaluate(), 1);
 }
 
+TEST(PowTest, PowString_Mult_power_Zero) {
+    Base* op1 = new mockMult();
+    Base* op2 = new mockOpZero();
+    Pow* test = new Pow(op1, op2);
+    std::string result = "((6*7)**0)";
+    EXPECT_EQ(test->stringify(), result);
+}
+
 #endif
