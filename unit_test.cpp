@@ -1,6 +1,6 @@
 #include "gtest/gtest.h"
 
-#include "add_test.hpp"
+#include "mult_test.hpp"
 
 
 int main(int argc, char **argv) {
