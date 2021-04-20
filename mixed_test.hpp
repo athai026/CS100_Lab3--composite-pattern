@@ -108,5 +108,19 @@ TEST(MixedTest, test7) {
     EXPECT_EQ(add->stringify(), result);
 }
 
+TEST(MixedTest, test8) {
+    Base* zero = new Op(0);
+    Base* three = new Op(3);
+    Base* five = new Op(5);
+    Base* six = new Op(6);
+    Base* sub = new Sub(five, six);
+    Base* div = new Div(sub, zero);
+    Base* pow = new Pow(div, three);
+    std::string result = "((5-6)/0)**3)";
+
+    EXPECT_THROW(pow->evaluate(), const char*);
+    EXPECT_EQ(pow->stringify(), result);
+}
+
 #endif
 
