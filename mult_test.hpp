@@ -28,4 +28,12 @@ TEST(MultTest, MultString_Ten_times_NegSeven) {
     EXPECT_EQ(test->stringify(), result);
 }
 
+TEST(MultTest, MultString_NegSeven_times_Ten) {
+    Base* op1 = new mockOpNegSeven();
+    Base* op2 = new mockOpTen();
+    Mult* test = new Mult(op1, op2);
+    std::string result = "(-7*10)";
+    EXPECT_EQ(test->stringify(), result);
+}
+
 #endif
