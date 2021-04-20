@@ -38,5 +38,21 @@ TEST(MixedTest, test2) {
     EXPECT_EQ(add->stringify(), result);
 }
 
+TEST(MixedTest, test3) {
+    Base* four = new Op(4);
+    Base* seven = new Op(7);
+    Base* nine = new Op(9);
+    Base* ten = new Op(10);
+    Base* seventeen = new Op(17);
+    Base* sub1 = new Sub(seven, four);
+    Base* mult = new Mult(sub1, nine);
+    Base* sub2 = new Sub(seventeen, ten);
+    Base* div  = new Div(mult, sub2);
+    std::string result = "(((7-4)*9)/(17-10))";
+
+    EXPECT_NEAR(div->evaluate(), 3.857143, 0.000001);
+    EXPECT_EQ(div->stringify(), result);
+}
+
 #endif
 
