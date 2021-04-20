@@ -13,4 +13,12 @@ TEST(PowTest, PowEval_Ten_power_NegFour) {
     EXPECT_EQ(test->evaluate(), 0.0001);
 }
 
+TEST(PowTest, PowString_Ten_power_NegFour) {
+    Base* op1 = new mockOpTen();
+    Base* op2 = new mockOpNegFour();
+    Pow* test = new Pow(op1, op2);
+    std::string result = "(10**-4)";
+    EXPECT_EQ(test->stringify(), result);
+}
+
 #endif
