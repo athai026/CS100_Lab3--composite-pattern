@@ -81,4 +81,19 @@ TEST(MultTest, MultString_Mult_times_Div) {
     EXPECT_EQ(test->stringify(), result);
 }
 
+TEST(MultTest, MultEval_NegSeven_times_NegFour) {
+    Base* op1 = new mockOpNegSeven();
+    Base* op2 = new mockOpNegFour();
+    Mult* test = new Mult(op1, op2);
+    EXPECT_EQ(test->evaluate(), 28);
+}
+
+TEST(MultTest, MultString_NegSeven_times_NegFour) {
+    Base* op1 = new mockOpNegSeven();
+    Base* op2 = new mockOpNegFour();
+    Mult* test = new Mult(op1, op2);
+    std::string result = "(-7*-4)";
+    EXPECT_EQ(test->stringify(), result);
+}
+
 #endif
