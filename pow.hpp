@@ -2,6 +2,7 @@
 #define __POW_HPP__
 
 #include "op.hpp"
+#include <cmath>
 
 class Pow : public Base {
     public:
