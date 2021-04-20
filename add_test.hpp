@@ -13,7 +13,12 @@ TEST(AddTest, AddEval_Ten_plus_NegSeven) {
     EXPECT_EQ(test->evaluate(), 3);
 }
 
-
+TEST(AddTest, AddEval_NegSeven_plus_Ten) {
+    Base* op1 = new mockOpNegSeven();
+    Base* op2 = new mockOpTen();
+    Add* test = new Add(op1, op2);
+    EXPECT_EQ(test->evaluate(), 3);
+}
 
 #endif //__ADD_TEST_HPP__
 
