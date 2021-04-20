@@ -81,5 +81,20 @@ TEST(AddTest, AddString_Mult_plus_Div) {
     EXPECT_EQ(test->stringify(), result);
 }
 
+TEST(AddTest, AddEval_NegSeven_plus_NegFour) {
+    Base* op1 = new mockOpNegSeven();
+    Base* op2 = new mockOpNegFour();
+    Add* test = new Add(op1, op2);
+    EXPECT_EQ(test->evaluate(), -11);
+}
+
+TEST(AddTest, AddString_NegSeven_plus_NegFour) {
+    Base* op1 = new mockOpNegSeven();
+    Base* op2 = new mockOpNegFour();
+    Add* test = new Add(op1, op2);
+    std::string result = "(-7+-4)";
+    EXPECT_EQ(test->stringify(), result);
+}
+
 #endif //__ADD_TEST_HPP__
 
