@@ -51,5 +51,20 @@ TEST(AddTest, AddString_Sub_plus_Five) {
     EXPECT_EQ(test->stringify(), result);
 }
 
+TEST(AddTest, AddEval_Add_plus_Pow) {
+    Base* op1 = new mockAdd();
+    Base* op2 = new mockPow();
+    Add* test = new Add(op1, op2);
+    EXPECT_EQ(test->evaluate(), 112);
+}
+
+TEST(AddTest, AddString_Add_plus_Pow) {
+    Base* op1 = new mockAdd();
+    Base* op2 = new mockPow();
+    Add* test = new Add(op1, op2);
+    std::string result = "((13+18)+(3**4))";
+    EXPECT_EQ(test->stringify(), result);
+}
+
 #endif //__ADD_TEST_HPP__
 
