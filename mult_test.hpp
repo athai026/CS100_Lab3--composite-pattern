@@ -36,4 +36,19 @@ TEST(MultTest, MultString_NegSeven_times_Ten) {
     EXPECT_EQ(test->stringify(), result);
 }
 
+TEST(MultTest, MultEval_Sub_times_Five) {
+    Base* op1 = new mockSub();
+    Base* op2 = new mockOpFive();
+    Mult* test = new Mult(op1, op2);
+    EXPECT_EQ(test->evaluate(), 25);
+}
+
+TEST(MultTest, MultString_Sub_times_Five) {
+    Base* op1 = new mockSub();
+    Base* op2 = new mockOpFive();
+    Mult* test = new Mult(op1, op2);
+    std::string result = "((18-13)*5)";
+    EXPECT_EQ(test->stringify(), result);
+}
+
 #endif
