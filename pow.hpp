@@ -1,6 +1,8 @@
 #ifndef __POW_HPP__
 #define __POW_HPP__
 
+#include <cmath>
+
 #include "op.hpp"
 
 class Pow : public Base {
