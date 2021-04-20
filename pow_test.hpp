@@ -58,4 +58,11 @@ TEST(PowTest, PowEval_Zero_power_NegFour) {
     EXPECT_THROW(test->evaluate(), const char*);
 }
 
+TEST(PowTest, PowEval_Zero_power_Zero) {
+    Base* op1 = new mockOpZero();
+    Base* op2 = new mockOpZero();
+    Pow* test = new Pow(op1, op2);
+    EXPECT_EQ(test->evaluate(), 1);
+}
+
 #endif
