@@ -28,4 +28,12 @@ TEST(PowTest, PowEval_Sub_power_Five) {
     EXPECT_EQ(test->evaluate(), 3125);
 }
 
+TEST(PowTest, PowString_Sub_power_Five) {
+    Base* op1 = new mockSub();
+    Base* op2 = new mockOpFive();
+    Pow* test = new Pow(op1, op2);
+    std::string result = "((18-13)**5)";
+    EXPECT_EQ(test->stringify(), result);
+}
+
 #endif
