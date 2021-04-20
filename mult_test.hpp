@@ -66,4 +66,19 @@ TEST(MultTest, MultString_Add_times_Pow) {
     EXPECT_EQ(test->stringify(), result);
 }
 
+TEST(MultTest, MultEval_Mult_times_Div) {
+    Base* op1 = new mockMult();
+    Base* op2 = new mockDiv();
+    Mult* test = new Mult(op1, op2);
+    EXPECT_EQ(test->evaluate(), 336);
+}
+
+TEST(MultTest, MultString_Mult_times_Div) {
+    Base* op1 = new mockMult();
+    Base* op2 = new mockDiv();
+    Mult* test = new Mult(op1, op2);
+    std::string result = "((6*7)*(72/9))";
+    EXPECT_EQ(test->stringify(), result);
+}
+
 #endif
