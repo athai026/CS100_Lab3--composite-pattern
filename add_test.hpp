@@ -66,5 +66,20 @@ TEST(AddTest, AddString_Add_plus_Pow) {
     EXPECT_EQ(test->stringify(), result);
 }
 
+TEST(AddTest, AddEval_Mult_plus_Div) {
+    Base* op1 = new mockMult();
+    Base* op2 = new mockDiv();
+    Add* test = new Add(op1, op2);
+    EXPECT_EQ(test->evaluate(), 50);
+}
+
+TEST(AddTest, AddString_Mult_plus_Div) {
+    Base* op1 = new mockMult();
+    Base* op2 = new mockDiv();
+    Add* test = new Add(op1, op2);
+    std::string result = "((6*7)+(72/9))";
+    EXPECT_EQ(test->stringify(), result);
+}
+
 #endif //__ADD_TEST_HPP__
 
