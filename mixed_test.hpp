@@ -67,5 +67,16 @@ TEST(MixedTest, test4) {
     EXPECT_EQ(div->stringify(), result);
 }
 
+TEST(MixedTest, test5) {
+    Base* six = new Op(6);
+    Base* eight = new Op(8);
+    Base* sub = new Sub(eight, eight);
+    Base* pow = new Pow(sub, six);
+    std::string result = "((8-8)**6)";
+
+    EXPECT_DOUBLE_EQ(pow->evaluate(), 0);
+    EXPECT_EQ(pow->stringify(), result);
+}
+
 #endif
 
