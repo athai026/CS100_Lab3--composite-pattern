@@ -36,4 +36,11 @@ TEST(PowTest, PowString_Sub_power_Five) {
     EXPECT_EQ(test->stringify(), result);
 }
 
+TEST(PowTest, PowEval_Mult_power_Zero) {
+    Base* op1 = new mockMult();
+    Base* op2 = new mockOpZero();
+    Pow* test = new Pow(op1, op2);
+    EXPECT_EQ(test->evaluate(), 1);
+}
+
 #endif
