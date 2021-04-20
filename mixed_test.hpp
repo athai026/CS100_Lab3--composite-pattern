@@ -94,5 +94,19 @@ TEST(MixedTest, test6) {
     EXPECT_EQ(pow->stringify(), result);
 }
 
+TEST(MixedTest, test7) {
+    Base* two = new Op(2);
+    Base* three = new Op(3);
+    Base* four = new Op(4);
+    Base* six = new Op(6);
+    Base* div = new Div(four, three);
+    Base* mult = new Mult(two, six);
+    Base* add =  new Add(div, mult);
+    std::string result = "((4/3)+(2*6))";
+
+    EXPECT_NEAR(add->evaluate(), 13.333333, 0.000001);
+    EXPECT_EQ(add->stringify(), result);
+}
+
 #endif
 
