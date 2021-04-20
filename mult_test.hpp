@@ -20,4 +20,12 @@ TEST(MultTest, MultEval_NegSeven_times_Ten) {
     EXPECT_EQ(test->evaluate(), -70);
 }
 
+TEST(MultTest, MultString_Ten_times_NegSeven) {
+    Base* op1 = new mockOpTen();
+    Base* op2 = new mockOpNegSeven();
+    Mult* test = new Mult(op1, op2);
+    std::string result = "(10*-7)";
+    EXPECT_EQ(test->stringify(), result);
+}
+
 #endif
