@@ -18,6 +18,7 @@
 #include "mockOpNegSeven.hpp"
 #include "mockOpNegFour.hpp"
 #include "mockAdd.hpp"
+#include "mockSub.hpp"
 #include "mockMult.hpp"
 #include "mockPow.hpp"
 #include "mockDiv.hpp"
